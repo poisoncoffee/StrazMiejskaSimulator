@@ -35,10 +35,10 @@ namespace StrazMiejskaSimulator
 
         string CreateCopName()
         {
-            PlainFileReader reader = PlainFileReader.Instance;
-            List<string> FirstNames = reader.ReadFileToList(reader.GetFilePathFor("CopFirstnames"));
-            List<string> LastNames = reader.ReadFileToList(reader.GetFilePathFor("CopLastnames"));
-            string finalName = FirstNames[Helpers.GetRandomValue(0, FirstNames.Count)] + " " + LastNames[Helpers.GetRandomValue(0, LastNames.Count)];
+            Database database = Database.Instance;
+            string[,] FirstNames = database.GetDataFor(Database.EData.CopFirstNames);
+            string[,] LastNames = database.GetDataFor(Database.EData.CopLastNames);
+            string finalName = FirstNames[Helpers.GetRandomValue(0,FirstNames.GetLength(0)),0] + " " + LastNames[Helpers.GetRandomValue(0, LastNames.GetLength(0)), 0];
             return finalName;
         }
 

@@ -30,6 +30,8 @@ namespace StrazMiejskaSimulator
             VehicleNames,
             Descriptions,
             ItemNames,
+            CopFirstNames,
+            CopLastNames
         }
 
         PlainFileReader reader = PlainFileReader.Instance;
@@ -40,7 +42,9 @@ namespace StrazMiejskaSimulator
         {
             { EData.VehicleNames , @".\Configs\VehicleNames.txt" },
             { EData.Descriptions , @".\Configs\Descriptions.txt" },
-            { EData.ItemNames , @".\Configs\ItemNames.txt" }
+            { EData.ItemNames , @".\Configs\ItemNames.txt" },
+            { EData.CopFirstNames , @".\Configs\CopFirstNames.txt" },
+            { EData.CopLastNames , @".\Configs\CopLastNames.txt" }
         };
 
 
