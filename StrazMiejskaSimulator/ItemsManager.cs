@@ -6,7 +6,7 @@ namespace StrazMiejskaSimulator
 {
     class ItemsManager
     {
-        static List<string> ItemNamesList;
+        static string[,] ItemNames;
         Random rnd = new Random();
 
         public ItemsManager()
@@ -16,8 +16,8 @@ namespace StrazMiejskaSimulator
 
         public static bool InitializeItemsList()
         {
-            PlainFileReader reader = PlainFileReader.Instance;
-            ItemNamesList = reader.ReadFileToList(reader.GetFilePathFor("Item"));
+            Database database = Database.Instance;
+            ItemNames = database.GetDataFor(Database.EData.ItemNames);
             return true;
         }
 
@@ -34,7 +34,7 @@ namespace StrazMiejskaSimulator
 
         string GenerateItemName()
         {
-            string name = ItemNamesList[rnd.Next(0, ItemNamesList.Count)];
+            string name = ItemNames[rnd.Next(0, ItemNames.GetLength(0)), 0];
             return name;
         }
 

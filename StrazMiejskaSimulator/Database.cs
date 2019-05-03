@@ -28,7 +28,8 @@ namespace StrazMiejskaSimulator
         public enum EData
         {
             VehicleNames,
-            Descriptions
+            Descriptions,
+            ItemNames,
         }
 
         PlainFileReader reader = PlainFileReader.Instance;
@@ -38,7 +39,8 @@ namespace StrazMiejskaSimulator
         static readonly Dictionary<EData, string> pathDictionary = new Dictionary<EData, string>()
         {
             { EData.VehicleNames , @".\Configs\VehicleNames.txt" },
-            { EData.Descriptions , @".\Configs\Descriptions.txt" }
+            { EData.Descriptions , @".\Configs\Descriptions.txt" },
+            { EData.ItemNames , @".\Configs\ItemNames.txt" }
         };
 
 

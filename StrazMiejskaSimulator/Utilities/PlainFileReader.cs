@@ -245,7 +245,7 @@ namespace StrazMiejskaSimulator
             return mainDictionary;
         }
 
-        //this is actually used
+        //WIP refactoring of whole program to consistently use this one method
         public string[,] ReadFileToStringArray(string path)
         {
             List<string> readLine = new List<string>();
@@ -273,11 +273,11 @@ namespace StrazMiejskaSimulator
             string[] columnHeaders = readLine[0].Split(';');
             int columns = columnHeaders.GetLength(0);
             int rows = readLine.Count - 1;
-            string[,] dataArray = new string[rows, columns];
 
+            string[,] dataArray = new string[rows, columns];
             for (int i = 0; i < rows; i++)
             {
-                string[] seperatedData = readLine[i+1].Split(';');
+                string[] seperatedData = readLine[i + 1].Split(';');
                 for (int j = 0; j < seperatedData.Length; j++)
                 {
                     dataArray[i, j] = seperatedData[j];
@@ -290,7 +290,6 @@ namespace StrazMiejskaSimulator
         public string GetFilePathFor (string data)
         {
             Dictionary<string, string> FilePaths = new Dictionary<string, string>() {
-                { "Item" , @"..\Configs\ItemNames.txt" },
                 { "CopFirstnames" , @"..\Configs\CopFirstNames.txt" },
                 { "CopLastnames" , @"..\Configs\CopLastNames.txt" },
                 { "MobNames" , @"..\Configs\MobNames.txt" },
