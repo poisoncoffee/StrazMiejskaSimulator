@@ -26,7 +26,7 @@ namespace StrazMiejskaSimulator
         {
             Database database = Database.Instance;
             string[,] VehicleNames = database.GetDataFor(Database.EData.VehicleNames);
-            int randomVehicle = rnd.Next(0, VehicleNames.GetLength(0));
+            int randomVehicle = rnd.Next(1, VehicleNames.GetLength(0));
 
             Vehicle vehicle = new Vehicle(StringToEvehicleConverter(VehicleNames[randomVehicle, 0]));
             return vehicle;
