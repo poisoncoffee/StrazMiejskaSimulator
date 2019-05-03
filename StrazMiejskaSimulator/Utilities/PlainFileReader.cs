@@ -290,8 +290,6 @@ namespace StrazMiejskaSimulator
         public string GetFilePathFor (string data)
         {
             Dictionary<string, string> FilePaths = new Dictionary<string, string>() {
-                { "MobNames" , @"..\Configs\MobNames.txt" },
-                { "VehicleNames" , @"..\Configs\VehicleNames.txt" },
                 { "Cop" , @"..\Configs\AIs\Cop.txt" },
                 { "Strongman" , @"..\Configs\AIs\Strongman.txt" },
                 { "Grandma" , @"..\Configs\AIs\Grandma.txt" },

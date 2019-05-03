@@ -136,7 +136,6 @@ namespace StrazMiejskaSimulator
             }
         }
 
-
         protected abstract void GenerateAI();
         public abstract int PerformAttack(AI you, AI opponent);
 

@@ -51,14 +51,14 @@ namespace StrazMiejskaSimulator
 
         string GetMobName(AI.EAIType type)
         {
-            PlainFileReader reader = PlainFileReader.Instance;
-            Dictionary<string, string> MobNames = reader.ReadFileToStringStringDictionary(reader.GetFilePathFor("MobNames"));
+            Database database = Database.Instance;
+            string[,] MobNames = database.GetDataFor(Database.EData.MobNames);
 
-            foreach(KeyValuePair<string, string> pair in MobNames)
+            for(int i = 0; i < MobNames.GetLength(0); i++)
             {
-                if(pair.Key == Convert.ToString(type))
+                if(MobNames[i,0] == Convert.ToString(type))
                 {
-                    return pair.Value;
+                    return MobNames[i, 1];
                 }
             }
 

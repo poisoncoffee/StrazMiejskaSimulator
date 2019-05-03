@@ -31,7 +31,8 @@ namespace StrazMiejskaSimulator
             Descriptions,
             ItemNames,
             CopFirstNames,
-            CopLastNames
+            CopLastNames,
+            MobNames
         }
 
         PlainFileReader reader = PlainFileReader.Instance;
@@ -44,7 +45,8 @@ namespace StrazMiejskaSimulator
             { EData.Descriptions , @".\Configs\Descriptions.txt" },
             { EData.ItemNames , @".\Configs\ItemNames.txt" },
             { EData.CopFirstNames , @".\Configs\CopFirstNames.txt" },
-            { EData.CopLastNames , @".\Configs\CopLastNames.txt" }
+            { EData.CopLastNames , @".\Configs\CopLastNames.txt" },
+            { EData.MobNames , @".\Configs\MobNames.txt" }
         };
 
 
@@ -59,7 +61,7 @@ namespace StrazMiejskaSimulator
 
         public string[,] GetDataFor(EData type)
         {
-            foreach(KeyValuePair<EData, string[,]> pair in mainDatabase)
+            foreach (KeyValuePair<EData, string[,]> pair in mainDatabase)
             {
                 if (pair.Key == type)
                 {
@@ -68,6 +70,10 @@ namespace StrazMiejskaSimulator
             }
 
             throw new ArgumentException("No data for type: " + type);
+
         }
+
+
+
     }
 }
