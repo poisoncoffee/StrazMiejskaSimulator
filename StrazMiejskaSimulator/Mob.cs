@@ -14,31 +14,6 @@ namespace StrazMiejskaSimulator
 
         }
 
-        public override int PerformAttack(AI you, AI opponent)
-        {
-            int dmg = 0;
-            int randomAttack = rnd.Next(0, you.Attacks.Count);
-            int index = 0;
-            foreach (KeyValuePair<string, string> pair in Attacks)
-            {
-                if (randomAttack == index)
-                {
-                    dmg = CalculateDamage(pair.Value, you, opponent);
-                    Console.WriteLine(pair.Key, you.name, opponent.name);
-
-                    return dmg;
-                }
-                else
-                {
-                    index++;
-                }
-            }
-
-            throw new IndexOutOfRangeException("randomAttacks went out of Attacks range!" + randomAttack + "/" + you.Attacks.Count);
-        }
-
-
-
         protected override void GenerateAI()
         {
             atk = rnd.Next(5, 30);

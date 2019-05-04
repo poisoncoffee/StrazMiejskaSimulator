@@ -2,9 +2,6 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Globalization;
-using StrazMiejskaSimulator.Utilities;
-
-using System.Text;
 
 namespace StrazMiejskaSimulator
 {
@@ -290,12 +287,6 @@ namespace StrazMiejskaSimulator
         public string GetFilePathFor (string data)
         {
             Dictionary<string, string> FilePaths = new Dictionary<string, string>() {
-                { "Cop" , @"..\Configs\AIs\Cop.txt" },
-                { "Strongman" , @"..\Configs\AIs\Strongman.txt" },
-                { "Grandma" , @"..\Configs\AIs\Grandma.txt" },
-                { "Drunkard" , @"..\Configs\AIs\Drunkard.txt" },
-                { "Priest" , @"..\Configs\AIs\Priest.txt" },
-                { "Teenager" , @"..\Configs\AIs\Teenager.txt" },
                 { "Weather" , @"..\Configs\Weathers.txt" }
             };
 

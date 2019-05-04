@@ -1,7 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using StrazMiejskaSimulator.Utilities;
-using System.Text;
+
 
 namespace StrazMiejskaSimulator
 {
@@ -53,30 +52,6 @@ namespace StrazMiejskaSimulator
             }
             else
                 return randomNumber;
-        }
-
-        public override int PerformAttack(AI you, AI opponent)
-        {
-            Random rnd = new Random();
-            int dmg = 0;
-            int randomAttack = rnd.Next(0, you.Attacks.Count);
-            int index = 0;
-            foreach (KeyValuePair<string, string> pair in Attacks)
-            {
-                if (randomAttack == index)
-                {
-                    dmg = CalculateDamage(pair.Value, you, opponent);
-                    Console.WriteLine(pair.Key, you.name, opponent.name);
-
-                    return dmg;
-                }
-                else
-                {
-                    index++;
-                }
-            }
-
-            throw new IndexOutOfRangeException("randomAttacks went out of Attacks range!" + randomAttack + "/" + you.Attacks.Count);
         }
 
         string ChooseAttackType()

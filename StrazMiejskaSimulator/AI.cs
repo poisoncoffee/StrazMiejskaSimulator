@@ -13,8 +13,19 @@ namespace StrazMiejskaSimulator
             Grandma,
             Drunkard,
             Priest,
-            Strongman
+            Strongman,
+            Teenager
         }
+
+        public Dictionary<EAIType, Database.EData> EdataForEAIType = new Dictionary<EAIType, Database.EData>()
+        {
+            { EAIType.Cop, Database.EData.CopAttacks },
+            { EAIType.Grandma, Database.EData.GrandmaAttacks },   
+            { EAIType.Drunkard, Database.EData.DrunkardAttacks },
+            { EAIType.Priest, Database.EData.PriestAttacks },
+            { EAIType.Strongman, Database.EData.StrongmanAttacks },
+            { EAIType.Teenager, Database.EData.TeenagerAttacks }
+        };
 
         public EAIType type { get; protected set; }
         public string name { get; protected set; }
@@ -22,7 +33,7 @@ namespace StrazMiejskaSimulator
         public int atk { get; protected set; }
         public int iq { get; protected set; }
         public int happiness { get; protected set; }
-        public Dictionary<string,string> Attacks { get; protected set; } = new Dictionary<string, string>();
+        public string[,] Attacks { get; protected set; }
         public List<Item> Inventory { get; protected set; } = new List<Item>();
 
         public AI(EAIType givenType)
@@ -34,8 +45,19 @@ namespace StrazMiejskaSimulator
 
         protected void InitializeAttacksList()
         {
-        PlainFileReader reader = PlainFileReader.Instance;
-        Attacks = reader.ReadFileToStringStringDictionary(reader.GetFilePathFor(Convert.ToString(type)));
+            Database database = Database.Instance;
+            Attacks = database.GetDataFor(ConvertEdataToEAIType(type));
+        }
+
+        private Database.EData ConvertEdataToEAIType(EAIType eaiType)
+        {
+            foreach(KeyValuePair<EAIType, Database.EData> pair in EdataForEAIType)
+            {
+                if (pair.Key == eaiType)
+                    return pair.Value;
+            }
+
+            throw new ArgumentException("No matching data type EData for provided EAIType: " + Enum.GetName(typeof(EAIType), eaiType));
         }
 
         public bool IsAlive()
@@ -137,10 +159,18 @@ namespace StrazMiejskaSimulator
         }
 
         protected abstract void GenerateAI();
-        public abstract int PerformAttack(AI you, AI opponent);
 
-
+        public int PerformAttack(AI you, AI opponent)
+        {
+            Random rnd = new Random();
+            int dmg = 0;
+            int index = rnd.Next(0, you.Attacks.GetLength(0));
+            dmg = CalculateDamage(you.Attacks[index, 1], you, opponent);
+            Console.WriteLine(you.Attacks[index, 0], you.name, opponent.name);
+            return dmg;
+        }
     }
+
 
 }
 

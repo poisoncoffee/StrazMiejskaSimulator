@@ -32,7 +32,13 @@ namespace StrazMiejskaSimulator
             ItemNames,
             CopFirstNames,
             CopLastNames,
-            MobNames
+            MobNames,
+            CopAttacks,
+            StrongmanAttacks,
+            GrandmaAttacks,
+            DrunkardAttacks,
+            PriestAttacks, 
+            TeenagerAttacks
         }
 
         PlainFileReader reader = PlainFileReader.Instance;
@@ -46,7 +52,13 @@ namespace StrazMiejskaSimulator
             { EData.ItemNames , @".\Configs\ItemNames.txt" },
             { EData.CopFirstNames , @".\Configs\CopFirstNames.txt" },
             { EData.CopLastNames , @".\Configs\CopLastNames.txt" },
-            { EData.MobNames , @".\Configs\MobNames.txt" }
+            { EData.MobNames , @".\Configs\MobNames.txt" },
+            { EData.CopAttacks , @".\Configs\AIs\Cop.txt" },
+            { EData.StrongmanAttacks , @".\Configs\AIs\Strongman.txt" },
+            { EData.GrandmaAttacks , @".\Configs\AIs\Grandma.txt" },
+            { EData.DrunkardAttacks , @".\Configs\AIs\Drunkard.txt" },
+            { EData.PriestAttacks , @".\Configs\AIs\Priest.txt" },
+            { EData.TeenagerAttacks , @".\Configs\AIs\Teenager.txt" },
         };
 
 
