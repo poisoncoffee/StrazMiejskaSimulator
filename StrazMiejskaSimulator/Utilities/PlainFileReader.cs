@@ -284,24 +284,6 @@ namespace StrazMiejskaSimulator
             return dataArray;
         }
 
-        public string GetFilePathFor (string data)
-        {
-            Dictionary<string, string> FilePaths = new Dictionary<string, string>() {
-                { "Weather" , @"..\Configs\Weathers.txt" }
-            };
-
-            foreach (KeyValuePair<string, string> pair in FilePaths)
-            {
-                if (data == pair.Key)
-                {
-                    return pair.Value;
-                }
-            }
-
-            throw new ArgumentOutOfRangeException("Data type in path request is not valid: " +  data);
-
-        }
-
         public string GetFilePathFor(string data, Location.ELocations location)
         {
             string pathTemplate = @"..\Configs\Locations\" + Convert.ToString(location) + @"\";

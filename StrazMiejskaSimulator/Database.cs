@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace StrazMiejskaSimulator
 {
@@ -38,7 +37,8 @@ namespace StrazMiejskaSimulator
             GrandmaAttacks,
             DrunkardAttacks,
             PriestAttacks, 
-            TeenagerAttacks
+            TeenagerAttacks,
+            Weather
         }
 
         PlainFileReader reader = PlainFileReader.Instance;
@@ -59,6 +59,7 @@ namespace StrazMiejskaSimulator
             { EData.DrunkardAttacks , @".\Configs\AIs\Drunkard.txt" },
             { EData.PriestAttacks , @".\Configs\AIs\Priest.txt" },
             { EData.TeenagerAttacks , @".\Configs\AIs\Teenager.txt" },
+            { EData.Weather , @".\Configs\Weathers.txt" }
         };
 
 

@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using StrazMiejskaSimulator.Utilities;
-using System.Xml;
 
 namespace StrazMiejskaSimulator
 {
@@ -40,21 +38,19 @@ namespace StrazMiejskaSimulator
                
         static string GetDescriptionForTemperature(float temperature)
         {
-            PlainFileReader reader = PlainFileReader.Instance;
-            Dictionary<int, string> WeathersList = reader.ReadFileToIntStringDictionary(reader.GetFilePathFor("Weather"));
-            string description = null;
-            float difference;
+            Database database = Database.Instance;
+            string[,] WeathersDefinitions = database.GetDataFor(Database.EData.Weather);
+            string description = "";
             float smallestDifference = 100.0f;
 
-            foreach(KeyValuePair<int, string> pair in WeathersList)
+            for(int i = 0; i < WeathersDefinitions.GetLength(0); i++)
             {
-                difference = Math.Abs(Convert.ToSingle(pair.Key) - temperature);
-                if(difference < smallestDifference)
+                if (Math.Abs(Convert.ToSingle(WeathersDefinitions[i,0]) - temperature) < smallestDifference)
                 {
-                    smallestDifference = difference;
-                    description = pair.Value;
+                    smallestDifference = Math.Abs(Convert.ToSingle(WeathersDefinitions[i, 0]) - temperature);
+                    description = WeathersDefinitions[i, 1];
                 }
-            }            
+            }
 
             return description;
         }
