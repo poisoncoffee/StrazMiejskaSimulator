@@ -38,7 +38,9 @@ namespace StrazMiejskaSimulator
             DrunkardAttacks,
             PriestAttacks, 
             TeenagerAttacks,
-            Weather
+            Weather,
+            LocationNames,
+            LocationDescriptions
         }
 
         PlainFileReader reader = PlainFileReader.Instance;
@@ -59,7 +61,9 @@ namespace StrazMiejskaSimulator
             { EData.DrunkardAttacks , @".\Configs\AIs\Drunkard.txt" },
             { EData.PriestAttacks , @".\Configs\AIs\Priest.txt" },
             { EData.TeenagerAttacks , @".\Configs\AIs\Teenager.txt" },
-            { EData.Weather , @".\Configs\Weathers.txt" }
+            { EData.Weather , @".\Configs\Weathers.txt" },
+            { EData.LocationNames , @".\Configs\LocationNames.txt" },
+            { EData.LocationDescriptions , @".\Configs\LocationDescriptions.txt" }
         };
 
 
