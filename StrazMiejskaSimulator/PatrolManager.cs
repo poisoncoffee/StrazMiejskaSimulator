@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using StrazMiejskaSimulator.Utilities;
-using System.Text;
 
 namespace StrazMiejskaSimulator
 {
