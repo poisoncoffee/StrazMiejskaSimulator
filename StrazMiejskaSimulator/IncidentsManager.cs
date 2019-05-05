@@ -45,11 +45,11 @@ namespace StrazMiejskaSimulator
 
                 choice = rnd.Next(1, sum+1);
 
-                foreach (KeyValuePair<string, int> pair in location.PossibleIncidents)
+                foreach (KeyValuePair<Incident.EIncidentType, int> pair in location.PossibleIncidents)
                 {
                     if (choice <= choiceStack + pair.Value)
                     {
-                        Incident incident =  StringToIncidentConverter(pair.Key);
+                        Incident incident =  EIncidentToIncidentConverter(pair.Key);
                         incident.location = location.type;
                         return incident;
                     }
@@ -63,25 +63,25 @@ namespace StrazMiejskaSimulator
             
         }
 
-        public Incident StringToIncidentConverter(string incidentString)
+        public Incident EIncidentToIncidentConverter(Incident.EIncidentType incidentType)
         {
             Incident incident = null;
 
-            switch (incidentString)
+            switch (incidentType)
             {
-                case "NewItem":
+                case Incident.EIncidentType.NewItem:
                     incident = new NewItemIncident();
                     break;
-                case "Fight":
+                case Incident.EIncidentType.Fight:
                     incident = new FightIncident();
                     break;
-                case "NewVehicle":
+                case Incident.EIncidentType.NewVehicle:
                     incident = new NewVehicleIncident();
                     break;
-                case "CashSink":
+                case Incident.EIncidentType.CashSink:
                     incident = new CashChangeIncident(Incident.EIncidentType.CashSink);
                     break;
-                case "CashSource":
+                case Incident.EIncidentType.CashSource:
                     incident = new CashChangeIncident(Incident.EIncidentType.CashSource);
                     break;
             }

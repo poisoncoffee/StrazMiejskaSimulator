@@ -36,18 +36,26 @@ namespace StrazMiejskaSimulator
             StrongmanAttacks,
             GrandmaAttacks,
             DrunkardAttacks,
-            PriestAttacks, 
+            PriestAttacks,
             TeenagerAttacks,
             Weather,
             LocationNames,
-            LocationDescriptions
+            LocationDescriptions,
+            MarketplaceMobs,
+            MarketplaceIncidents,
+            ParkingLotMobs,
+            ParkingLotIncidents,
+            ChurchMobs,
+            ChurchIncidents,
+            GreenSquareMobs,
+            GreenSquareIncidents
         }
 
         PlainFileReader reader = PlainFileReader.Instance;
 
         static Dictionary<EData, string[,]> mainDatabase = new Dictionary<EData, string[,]>();
 
-        static readonly Dictionary<EData, string> pathDictionary = new Dictionary<EData, string>()
+        static readonly Dictionary<EData, string> DataSources = new Dictionary<EData, string>()
         {
             { EData.VehicleNames , @".\Configs\VehicleNames.txt" },
             { EData.Descriptions , @".\Configs\Descriptions.txt" },
@@ -63,13 +71,38 @@ namespace StrazMiejskaSimulator
             { EData.TeenagerAttacks , @".\Configs\AIs\Teenager.txt" },
             { EData.Weather , @".\Configs\Weathers.txt" },
             { EData.LocationNames , @".\Configs\LocationNames.txt" },
-            { EData.LocationDescriptions , @".\Configs\LocationDescriptions.txt" }
+            { EData.LocationDescriptions , @".\Configs\LocationDescriptions.txt" },
+            { EData.MarketplaceMobs , @".\Configs\Locations\Marketplace\Mobs.txt" },
+            { EData.MarketplaceIncidents , @".\Configs\Locations\Marketplace\Incidents.txt" },
+            { EData.ParkingLotMobs , @".\Configs\Locations\ParkingLot\Mobs.txt" },
+            { EData.ParkingLotIncidents , @".\Configs\Locations\ParkingLot\Incidents.txt" },
+            { EData.ChurchMobs , @".\Configs\Locations\Church\Mobs.txt" },
+            { EData.ChurchIncidents , @".\Configs\Locations\Church\Incidents.txt" },
+            { EData.GreenSquareMobs , @".\Configs\Locations\GreenSquare\Mobs.txt" },
+            { EData.GreenSquareIncidents , @".\Configs\Locations\GreenSquare\Incidents.txt" }
         };
 
+        static readonly Dictionary<Location.ELocations, EData> MobDefinitions = new Dictionary<Location.ELocations, EData>()
+        {
+            { Location.ELocations.Marketplace , EData.MarketplaceMobs },
+            { Location.ELocations.ParkingLot , EData.ParkingLotMobs },
+            { Location.ELocations.Church , EData.ChurchMobs },
+            { Location.ELocations.GreenSquare , EData.GreenSquareMobs }
+
+        };
+
+        static readonly Dictionary<Location.ELocations, EData> IncidentDefinitions = new Dictionary<Location.ELocations, EData>()
+        {
+            { Location.ELocations.Marketplace , EData.MarketplaceIncidents },
+            { Location.ELocations.ParkingLot , EData.MarketplaceIncidents },
+            { Location.ELocations.Church , EData.MarketplaceIncidents },
+            { Location.ELocations.GreenSquare , EData.MarketplaceIncidents }
+
+        };
 
         public bool UpdateDatabase()
         {
-            foreach (KeyValuePair<EData, string> pair in pathDictionary)
+            foreach (KeyValuePair<EData, string> pair in DataSources)
             {
                 mainDatabase.Add(pair.Key, reader.ReadFileToStringArray(pair.Value));
             }
@@ -87,7 +120,32 @@ namespace StrazMiejskaSimulator
             }
 
             throw new ArgumentException("No data for type: " + type);
+        }
 
+        public EData GetMobsEDataForLocation(Location.ELocations locationType)
+        {
+            foreach(KeyValuePair<Location.ELocations, EData> pair in MobDefinitions)
+            {
+                if(pair.Key == locationType)
+                {
+                    return pair.Value;
+                }
+            }
+
+            throw new ArgumentException("No EData was found for this type of Location: " + Enum.GetName(typeof(Location.ELocations), locationType));
+        }
+
+        public EData GetIncidentsEDataForLocation(Location.ELocations locationType)
+        {
+            foreach (KeyValuePair<Location.ELocations, EData> pair in IncidentDefinitions)
+            {
+                if (pair.Key == locationType)
+                {
+                    return pair.Value;
+                }
+            }
+
+            throw new ArgumentException("No EData was found for this type of Location: " + Enum.GetName(typeof(Location.ELocations), locationType));
         }
 
 

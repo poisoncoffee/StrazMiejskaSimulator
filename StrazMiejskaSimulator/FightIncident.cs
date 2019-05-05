@@ -16,7 +16,7 @@ namespace StrazMiejskaSimulator
 
         public override bool PerformIncident(Location location)
         {
-            opponent = GetRandomOponent(location);
+            opponent = new Mob(GetRandomOpponentType(location));
             Console.WriteLine(GetDescriptionForIncident (this, Enum.GetName(typeof(AI.EAIType), opponent.type)));
             copManager.DisplayCurrentlyHiredShort();
             Console.WriteLine("____________________________________________________");
@@ -27,7 +27,7 @@ namespace StrazMiejskaSimulator
         }
 
 
-        AI GetRandomOponent(Location location)
+        AI.EAIType GetRandomOpponentType(Location location)
         {
             Random rnd = new Random();
             int sum = 0;
@@ -41,11 +41,11 @@ namespace StrazMiejskaSimulator
 
             choice = rnd.Next(1, sum + 1);
 
-            foreach (KeyValuePair<string, int> pair in location.PossibleMobs)
+            foreach (KeyValuePair<AI.EAIType, int> pair in location.PossibleMobs)
             {
                 if (choice <= choiceStack + pair.Value)
                 {
-                    return StringToMobConverter(pair.Key);
+                    return pair.Key;
                 }
                 else
                 {
@@ -54,25 +54,6 @@ namespace StrazMiejskaSimulator
             }
 
             throw new ArgumentException();
-        }
-
-        public Mob StringToMobConverter(string aiString)
-        {
-            Mob mob;
-
-            switch (aiString)
-            {
-                case "Grandma":
-                    return mob = new Mob(AI.EAIType.Grandma);
-                case "Drunkard":
-                    return mob = new Mob(AI.EAIType.Drunkard);
-                case "Priest":
-                    return mob = new Mob(AI.EAIType.Priest);
-                case "Strongman":
-                    return mob = new Mob(AI.EAIType.Strongman);
-            }
-
-            throw new ArgumentException("Incorrect String provided; there is no such mob as " + aiString);
         }
 
         bool PerformFight(AI you, AI opponent)

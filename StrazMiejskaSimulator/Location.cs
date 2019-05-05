@@ -8,8 +8,8 @@ namespace StrazMiejskaSimulator
         public ELocations type { get; private set; }
         public string name { get; private set; }
         public List<string> Descriptions { get; private set; }
-        public Dictionary<string, int> PossibleIncidents { get; private set; }
-        public Dictionary<string, int> PossibleMobs { get; private set; }
+        public Dictionary<Incident.EIncidentType, int> PossibleIncidents { get; private set; }
+        public Dictionary<AI.EAIType, int> PossibleMobs { get; private set; }
 
         public enum ELocations
         {
@@ -29,9 +29,8 @@ namespace StrazMiejskaSimulator
             type = location;
             name = GetELocationsName(type);
             Descriptions = GetELocationsDescriptions(type);
-            PlainFileReader reader = PlainFileReader.Instance;
-            PossibleIncidents = reader.ReadFileToDictionary(reader.GetFilePathFor("Incidents", location));
-            PossibleMobs = reader.ReadFileToDictionary(reader.GetFilePathFor("PossibleMobs", location));
+            PossibleIncidents = GetPossibleIncidents(location);
+            PossibleMobs = GetPossibleMobs(location);
         }
 
         public void DisplayLocationDescription()
@@ -74,6 +73,46 @@ namespace StrazMiejskaSimulator
             }
                     
            throw new ArgumentException("No name was found for given ELocation type: " + Enum.GetName(typeof(ELocations), type));
+        }
+
+        private Dictionary<Incident.EIncidentType, int> GetPossibleIncidents(ELocations location)
+        {
+            Dictionary<Incident.EIncidentType, int> Incidents = new Dictionary<Incident.EIncidentType, int>();
+            Database database = Database.Instance;
+            string[,] rawData = database.GetDataFor(database.GetIncidentsEDataForLocation(location));
+
+            for(int i = 0; i < rawData.GetLength(0); i++)
+            {
+                foreach (Incident.EIncidentType incidentType in Enum.GetValues(typeof(Incident.EIncidentType)))
+                {
+                    if(Enum.GetName(typeof(Incident.EIncidentType), incidentType) == rawData[i,0])
+                    {
+                        Incidents.Add(incidentType, Convert.ToInt16(rawData[i, 1]));
+                    }
+                }
+            }
+
+            return Incidents;
+        }
+
+        private Dictionary<AI.EAIType, int> GetPossibleMobs(ELocations location)
+        {
+            Dictionary<AI.EAIType, int> Mobs = new Dictionary<AI.EAIType, int>();
+            Database database = Database.Instance;
+            string[,] rawData = database.GetDataFor(database.GetMobsEDataForLocation(location));
+
+            for (int i = 0; i < rawData.GetLength(0); i++)
+            {
+                foreach (AI.EAIType aiType in Enum.GetValues(typeof(AI.EAIType)))
+                {
+                    if (Enum.GetName(typeof(AI.EAIType), aiType) == rawData[i, 0])
+                    {
+                        Mobs.Add(aiType, Convert.ToInt16(rawData[i, 1]));
+                    }
+                }
+            }
+
+            return Mobs;
         }
     }
 }

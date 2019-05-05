@@ -31,9 +31,9 @@ namespace StrazMiejskaSimulator
             string key = Convert.ToString(type) + "_" + Convert.ToString(incident.location);
             if (keyPart != String.Empty)
             {
-
                 key = Convert.ToString(type) + "_" + Convert.ToString(incident.location) + "_" + keyPart;
             }
+
             List<string> MatchingDescriptions = new List<string>();
             Random rnd = new Random();
 
