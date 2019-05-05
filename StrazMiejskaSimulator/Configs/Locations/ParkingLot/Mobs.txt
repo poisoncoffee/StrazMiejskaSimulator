@@ -1,0 +1,2 @@
+Strongman;3
+Drunkard;2

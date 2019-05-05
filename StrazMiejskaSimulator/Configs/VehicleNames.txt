@@ -1,0 +1,4 @@
+﻿key;name
+OnFoot;Pieszo
+Horse;Wyliniały koń
+Car;Samochód

@@ -1,0 +1,5 @@
+﻿{0} zaczyna się modlić za {1};iq
+{0} wzywa Belzebuba;iq
+{0} grozi {1}, że nie ochrzci jego dzieci;iq
+{0} poddusza {1} różańcem!;atk
+{0} wali {1} Biblią po głowie;atk

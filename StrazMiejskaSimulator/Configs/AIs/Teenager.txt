@@ -1,0 +1,4 @@
+﻿{0} zaczyna krzyczeć, że {1} go nie rozumie;iq
+{0} grozi {1} swoim tatusiem;iq
+{0} przywala {1} fidget spinnerem;atk
+{0} robi {1} zdjęcie i wrzuca na Instagrama. {1} staje się memem;iq

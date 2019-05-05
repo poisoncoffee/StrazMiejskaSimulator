@@ -1,0 +1,5 @@
+﻿{0} wali {1} z bara!;atk
+{0} okłada {1} pałką!;atk
+{0} wypisuje {1} mandat za zakłócanie porządku;iq
+{0} stara się wytłumaczyć {1} że walka to nienajlepszy pomysł.;iq
+{0} odpowiada ciętą ripostą. {1} jest w szoku!;iq

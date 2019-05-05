@@ -1,0 +1,5 @@
+﻿type;name
+Marketplace;Targowisko
+ParkingLot;Parking
+Church;Kościół
+GreenSquare;Park

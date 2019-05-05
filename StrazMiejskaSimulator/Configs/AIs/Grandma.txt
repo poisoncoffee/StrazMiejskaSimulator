@@ -1,0 +1,4 @@
+﻿{1} obrywa od {0} wózeczkiem na zakupy. Prosto w zęby!;atk
+{0} wyzywa {1} od szatanistów.;iq
+{0} mówi, że za jej czasów to nie było czegoś takiego jak Straż Miejska. Były tylko wojska niemieckie.;iq
+{0} strzela w {1} kulkami na mole. Headshot!;atk

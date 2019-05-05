@@ -1,0 +1,2 @@
+Drunkard;4
+Teenager;2

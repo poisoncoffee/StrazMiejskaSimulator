@@ -1,0 +1,9 @@
+﻿type;desc
+Marketplace;Targowisko. Kto by się spodziewał, że ta babcia naprawdę ma pozwolenie na handel?
+Marketplace;Targ to miejsce pełne życia. Trzeba reagować szybko i okraść ludzi zanim oni okradną ciebie.
+ParkingLot;Parking to zawsze dobry wybór, jeśli chodzi o patrol. Tyle źle zaparkowanych samochodów!
+ParkingLot;Na Parkingu zawsze dzieją się cyrki. Dlatego tak bardzo warto się tam wybrać!
+Church;Funkcjonariusze wybrali się dziś do kościoła, bynajmniej nie po to, żeby się modlić.
+Church;Dzisiaj w kościele jest pusto. I tak już od dwudziestu lat.
+GreenSquare;Strażnicy wybrali się do parku. Jest tu ładnie, zielono i śmierdzi kupą.
+GreenSquare;Dziś park zionie pustką. Nic dziwnego. Komu chciałoby się przychodzić w taką pogodę?

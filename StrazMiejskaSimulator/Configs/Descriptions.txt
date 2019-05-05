@@ -1,0 +1,15 @@
+﻿key;description
+NewItem_Marketplace;Na rogu dzieciak sprzedaje za fajki rzeczy wyniesione z domu. Wśród nich znajduje się takie złoto jak
+NewItem_Marketplace;Nie wiadomo dokładnie kto miał takie lepkie rączki, ale po przejściu przez targowisko okazało się, że w dobytku masz
+Fight_Marketplace_Grandma;Tej babci wybitnie nie podoba się, że tak wnikliwie inwestygujecie jajka, które sprzedaje. Nie ma ani pozwolenia na handel, ani dokumentów sanepidowskich. Zaczyna straszyć was swoim wnuczkiem. Będzie walka!
+Fight_Marketplace_Strongman;Karku stoi na roku i handluje ruskimi fajkami z bagażnika swojego samochodu. Uprzejmie podchodzicie do niego i pytacie o cenę. Niestety, Karku nie zna się na uprzejmości równie dobrze co wy. Będzie walka! 
+NewVehicle_Marketplace_Car;Handlarz samochodów w ogóle nie miał pozwolenia na handel! Po dłuższej rozmowie okazało się, że samochody zostały skradzione z Niemiec. Na koniec skojarzyliście jego twarz z poszukiwanym listem gończym szefem mafii samochodowej i chcieliście go aresztować. Mafiozo zaproponował wam fiata punto w zamian za milczenie. Zgodziliście się.
+NewVehicle_Marketplace_Horse;Pomarszczony dziadzio, który sprzedawał płody rolne nie miał pieniędzy, aby zapłacić mandat za brak pozwolenia na handel. W zamian za to, dostaliście jego konia!
+CashSink_Marketplace;Cóż za wspaniała solówka na akordeonie w wykonaniu tego artysty! Długo staliście i biliście brawo. Cóż za zbieg okoliczności, że dosłownie chwilę później wszyscy zgubili portfele! Tracicie {0} zł!
+CashSource_Marketplace;Kilka braków pozwolenia na handel, kilka nieprawidłowo zaparkowanych samochodów. Kasetka napełnia się... Zarobiliście dzisiaj {0} zł!
+Fight_ParkingLot_Strongman;Podczas gdy właśnie montujecie blokadę na czerwone Audi, zjawia się jego właściciel. Ponad sto kilogramów mięśni, solarka, złoty łańcuch na wytrenowanym karczychu. Nóżki jak u kurczaczka, ale nie szkodzi. Spuści wam manto gigantycznymi łapami. Będzie ustawka!
+Fight_ParkingLot_Teenager;Właśnie widzicie jak jakiś nastolatek przejechał komuś kluczami po boku samochodu. Usiłujecie go zatrzymać, ale dzieciak ucieka. Będzie walka!
+NewVehicle_ParkingLot_Car;Właściciel Opla Corsy, któemu wystawiliście mandat stwierdził, że samochód jest wart mniej niż mandat za niego. Zyskaliście więc samochód!
+NewVehicle_ParkingLot_Horse;Przez godzinę próbowaliście założyć blokadę na nieprawidłowo zaparkowanego konia, ale nie udało wam się. Zwierzę jednak jakby was polubiło i poszło za wami.
+CashSource_ParkingLot;Wypisaliście mandat nieprawidłowo zaparkowanej karetce. Ratownicy nie mieli wyjścia i natychmiast go spłacili!
+CashSource_ParkingLot;Procedurę wystawiania mandatów opanowaliście już do perfekcji! Co prawda wszystkie te samochody były zaparkowane poprawnie, ale na pewno ktoś się wystraszy i zapłaci.
