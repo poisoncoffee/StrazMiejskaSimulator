@@ -134,26 +134,25 @@ namespace StrazMiejskaSimulator
         protected int CalculateDamage(string dmgType, AI you, AI opponent)
         {
             Random rnd = new Random();
-            int dmg = 0;
+            int dmg = -1;
+            int randomFactor = 0;
 
-            switch (dmgType)
+            while(dmg < 0)
             {
-                case "atk":
-                    dmg = (you.CalculateAttackValue() + rnd.Next(-3, 3) - opponent.CalculateAttackValue() + rnd.Next(-3, 3));
-                    break;
-                case "iq":
-                    dmg = (you.CalculateIqValue() + rnd.Next(-3, 3) - opponent.CalculateIqValue() + rnd.Next(-3, 3));
-                    break;
+                switch (dmgType)
+                {
+                    case "atk":
+                        dmg = (you.CalculateAttackValue() + rnd.Next(-randomFactor, randomFactor) - opponent.CalculateAttackValue() + rnd.Next(-randomFactor, randomFactor));
+                        break;
+                    case "iq":
+                        dmg = (you.CalculateIqValue() + rnd.Next(-randomFactor, randomFactor) - opponent.CalculateIqValue() + rnd.Next(-randomFactor, randomFactor));
+                        break;
+                }
+
+                randomFactor++;
             }
 
-            if (dmg > 0)
-            {
-                return dmg;
-            }
-            else
-            {
-                return 0;
-            }
+            return dmg;
         }
 
         protected abstract void GenerateAI();
