@@ -27,7 +27,7 @@ namespace StrazMiejskaSimulator
             Console.WriteLine("____________________________________________________");
             Console.WriteLine("[m] - sprawdzaj pozwolenia na handel na Targowisku");
             Console.WriteLine("[p] - idź wypisywać mandaty na Parking");
-            Console.WriteLine("[f] - szukaj pijaczków w Parku");
+            Console.WriteLine("[g] - szukaj pijaczków w Parku");
             Console.WriteLine("[c] - idź do Kościoła");
             Console.WriteLine("____________________________________________________");
         }
