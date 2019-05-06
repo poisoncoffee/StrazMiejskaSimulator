@@ -1,3 +1,3 @@
 mob;chance
 Strongman;3
-Drunkard;2
+Teenager;2
