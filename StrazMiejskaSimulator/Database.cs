@@ -94,9 +94,9 @@ namespace StrazMiejskaSimulator
         static readonly Dictionary<Location.ELocations, EData> IncidentDefinitions = new Dictionary<Location.ELocations, EData>()
         {
             { Location.ELocations.Marketplace , EData.MarketplaceIncidents },
-            { Location.ELocations.ParkingLot , EData.MarketplaceIncidents },
-            { Location.ELocations.Church , EData.MarketplaceIncidents },
-            { Location.ELocations.GreenSquare , EData.MarketplaceIncidents }
+            { Location.ELocations.ParkingLot , EData.ParkingLotIncidents },
+            { Location.ELocations.Church , EData.ChurchIncidents },
+            { Location.ELocations.GreenSquare , EData.GreenSquareIncidents }
 
         };
 
