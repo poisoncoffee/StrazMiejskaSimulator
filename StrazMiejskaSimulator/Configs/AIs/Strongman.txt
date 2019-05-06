@@ -1,4 +1,5 @@
-﻿{0} uderza {1} maczetą, na szczęście tą tępą stroną.;atk
+﻿atk;type
+{0} uderza {1} maczetą, na szczęście tą tępą stroną.;atk
 {0} pyta {1}, czy ma jakiś problem?;iq
 {0} sprzedaje {1} adidasa w twarz!;atk
 {0} używa ataku z dyńki! {1} solidnie obrywa.;atk

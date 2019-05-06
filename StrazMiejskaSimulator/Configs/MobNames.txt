@@ -3,5 +3,4 @@ Grandma;Babcia
 Drunkard;Menel
 Priest;Ksiądz
 Strongman;Karku
-AngryMum;Rozwścieczona mamuśka
 Teenager;Nastolatek

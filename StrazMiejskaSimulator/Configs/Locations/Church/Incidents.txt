@@ -1,3 +1,4 @@
+incident;chance
 NewItem;1
 Fight;5
 GetCashSink;4 

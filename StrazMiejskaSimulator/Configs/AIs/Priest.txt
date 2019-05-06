@@ -1,5 +1,5 @@
-﻿{0} zaczyna się modlić za {1};iq
-{0} wzywa Belzebuba;iq
-{0} grozi {1}, że nie ochrzci jego dzieci;iq
+﻿atk;type
+{0} zaczyna się modlić za {1};iq
+{0} wyzywa {1} od Belzebubów;iq
 {0} poddusza {1} różańcem!;atk
-{0} wali {1} Biblią po głowie;atk
+{0} rozkwasza głowę {1} o chrzcielnicę!;atk

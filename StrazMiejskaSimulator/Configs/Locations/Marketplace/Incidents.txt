@@ -1,4 +1,5 @@
-﻿CashSink;3
+﻿incident;chance
+CashSink;3
 Fight;2
 NewItem;5
 NewVehicle;1

@@ -1,3 +1,4 @@
-﻿{0} używa Smrodliwego Obłoczka. {1} wymiotuje.;atk
+﻿atk;type
+{0} używa Smrodliwego Obłoczka. {1} wymiotuje.;atk
 {0} mianuje {1} na Kierownika. {1} jest tak urzeczony, że na chwilę zapomina o walce.;iq
 {0} ciska w {1} shurikenami. Wróć! To są zgniecione puszki.;atk

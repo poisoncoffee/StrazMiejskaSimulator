@@ -1,2 +1,3 @@
-﻿CashSource;2
+﻿incident;chance
+CashSource;2
 Fight;3
