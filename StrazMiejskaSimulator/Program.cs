@@ -6,7 +6,6 @@ namespace StrazMiejskaSimulator
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Starting...");
             InitializeComponents();
             
             while (true)
