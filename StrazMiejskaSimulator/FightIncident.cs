@@ -58,7 +58,7 @@ namespace StrazMiejskaSimulator
 
         bool PerformFight(AI you, AI opponent)
         {
-            bool playerOneWon = false;
+            bool playerOneWon = true;
             if (you.IsAlive())
             {
                 AI playerOne;
@@ -99,21 +99,19 @@ namespace StrazMiejskaSimulator
 
                 }
 
-                if (coinFlip == 0)
+                if (coinFlip == 0)  // If you were playerOne
                 {
                     FightSummary(playerOneWon, opponent);
                     return playerOneWon;
                 }
-                else
-                {
-                    FightSummary(!playerOneWon, opponent);
-                    return !playerOneWon;
-                }
             }
             else
             {
-                return !playerOneWon;
+                Console.WriteLine("Niestety, {0} nie jest w stanie walczyć. Automatycznie przegrywasz walkę", you.name);
             }
+
+            FightSummary(!playerOneWon, opponent);
+            return !playerOneWon;
         }
 
         void FightSummary (bool victory, AI opponent)

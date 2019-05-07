@@ -59,8 +59,7 @@ namespace StrazMiejskaSimulator
                     }
                 }
 
-                throw new ArgumentException();
-            
+                throw new ArgumentException();            
         }
 
         public Incident EIncidentToIncidentConverter(Incident.EIncidentType incidentType)

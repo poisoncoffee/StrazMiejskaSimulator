@@ -135,7 +135,7 @@ namespace StrazMiejskaSimulator
         {
             Random rnd = new Random();
             int dmg = -1;
-            int randomFactor = 0;
+            int randomFactor = 3;
 
             while(dmg < 0)
             {
